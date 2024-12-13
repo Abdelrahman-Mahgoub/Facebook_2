@@ -75,7 +75,7 @@ contentsContainer.getChildren().add(vbox);
     private User user;
     @FXML
     protected void NewPost(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         PostApplication post= new PostApplication(user);
     post.start(stage);
     }
@@ -101,9 +101,14 @@ public void logout(){
 }
 @FXML
     protected void Friends(ActionEvent event) throws IOException {
-    Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     FriendApplication post= new FriendApplication(user);
     post.start(stage);
 }
-
+@FXML
+protected void  Notfi(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Notfications post= new Notfications(user);
+        post.start(stage);
+    }
 }
