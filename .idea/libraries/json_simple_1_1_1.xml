@@ -2,6 +2,7 @@
   <library name="json-simple-1.1.1">
     <CLASSES>
       <root url="jar://$USER_HOME$/Downloads/json-simple-1.1.1.jar!/" />
+
       <root url="file://$PROJECT_DIR$" />
       <root url="jar://$USER_HOME$/Downloads/jackson-master.zip!/" />
     </CLASSES>
@@ -9,5 +10,6 @@
     <SOURCES>
       <root url="file://$PROJECT_DIR$/demo11/src/main/java" />
     </SOURCES>
+
   </library>
 </component>
