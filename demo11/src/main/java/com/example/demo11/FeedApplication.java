@@ -28,6 +28,7 @@ public class FeedApplication extends Application {
 Parent root=fxmlLoader.load();
 FeedController controller= fxmlLoader.getController();
 controller.setUser(user);
+controller.sugg();
             primaryStage.setTitle("Feed");
             primaryStage.setScene(new Scene(root));
             primaryStage.show();

@@ -1,5 +1,6 @@
 package com.example.demo11;
 
+import Backend.Group;
 import Backend.Posts;
 import Backend.SaveContent;
 import BackendUser.User;
@@ -31,6 +32,7 @@ public class PostController {
     @FXML
     //these variables so i can change from one screen to another
     private ImageView img;
+    private Group grp;
     private Stage stage;
     private Scene scene;
     private Parent parent;
@@ -54,6 +56,11 @@ private Posts p = new Posts(String.valueOf(id),"1000","x");
             e.printStackTrace();
         }
     }
+
+    public void setGrp(Group grp) {
+        this.grp = grp;
+    }
+
     @FXML
 
     protected void onHelloButtonClick(ActionEvent event) {
@@ -64,9 +71,12 @@ private Posts p = new Posts(String.valueOf(id),"1000","x");
    }
    else{
        p.setContent(text.getText());
-       p.setAuthorID("1000");
+      if(grp!=null){
+       p.setAuthorID(grp.getName());}
+      else{
+          p.setAuthorID(user.getUsername());
+      }
        p.setContentID(String.valueOf(id));
-       p.setAuthorID(user.username);
        id++;
        SaveContent save = new SaveContent();
        save.save(p);

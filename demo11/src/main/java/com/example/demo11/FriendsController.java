@@ -46,7 +46,6 @@ private User user;
                 contentsContainer.getChildren().add(Accept);
                 contentsContainer.getChildren().add(Decline);
            User geded= users.get(i);
-           Accept.setOnAction(e -> Accept(geded));
                 Accept.setOnAction(e -> Accept(geded));
                 Decline.setOnAction(e -> Decline(geded));
             }

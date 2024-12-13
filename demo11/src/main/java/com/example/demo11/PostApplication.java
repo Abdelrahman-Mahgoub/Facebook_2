@@ -1,5 +1,6 @@
 package com.example.demo11;
 
+import Backend.Group;
 import BackendUser.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +12,14 @@ import java.io.IOException;
 
 public class PostApplication extends Application {
     private User user;
+    private Group grp;
     public PostApplication(User user) {
     this.user=user;
+    }
+
+    public PostApplication(User user, Group grp) {
+        this.user = user;
+        this.grp = grp;
     }
 
     @Override
@@ -21,6 +28,7 @@ public class PostApplication extends Application {
         Parent root=fxmlLoader.load();
         PostController controller= fxmlLoader.getController();
         controller.setUser(user);
+        controller.setGrp(grp);
         Scene scene = new Scene(root);
         stage.setTitle("Add Post");
         stage.setScene(scene);

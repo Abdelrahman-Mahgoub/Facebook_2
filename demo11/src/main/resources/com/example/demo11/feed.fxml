@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="862.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo11.FeedController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="885.0" prefWidth="1198.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo11.FeedController">
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -17,12 +17,15 @@
             <VBox prefHeight="100.0" prefWidth="274.0">
                <children>
                   <TextField fx:id="search" />
-                  <Button mnemonicParsing="false" text="Search Group" />
+                  <Button mnemonicParsing="false" onAction="#searchgrps" text="Search Group" />
                   <Button mnemonicParsing="false" onAction="#search" text="Search Userr" />
                   <Label fx:id="errors" prefHeight="18.0" prefWidth="111.0" />
+                  <Button mnemonicParsing="false" onAction="#groups" prefHeight="26.0" prefWidth="133.0" text="Group activity" />
+                  <Button mnemonicParsing="false" onAction="#profile" text="Manage Profile" />
                </children>
             </VBox>
             <Button mnemonicParsing="false" onAction="#NewPost" prefHeight="26.0" prefWidth="155.0" text="Post" />
+            <Button mnemonicParsing="false" onAction="#NewGroup" prefHeight="26.0" prefWidth="98.0" text="Add Group" />
             <Button mnemonicParsing="false" onAction="#NewStory" prefHeight="26.0" prefWidth="191.0" text="Story" />
             <Button mnemonicParsing="false" onAction="#logout" text="Logout" />
             <Button mnemonicParsing="false" onAction="#Friends" prefHeight="26.0" prefWidth="96.0" text="Friends" />
@@ -46,4 +49,11 @@
          </content>
       </ScrollPane>
    </center>
+   <right>
+      <VBox fx:id="Vbox" prefHeight="779.0" prefWidth="281.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="18.0" prefWidth="185.0" text="Group suggestion" />
+         </children>
+      </VBox>
+   </right>
 </BorderPane>
