@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -21,6 +22,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class FeedController implements Initializable {
@@ -67,7 +69,10 @@ contentsContainer.getChildren().add(vbox);
 
     @FXML
     private Label name;
-    private Label content;
+    @FXML
+        private Label errors;
+    @FXML
+    private TextField search;
     private Stage stage;
     private Scene scene;
     private Parent parent;
@@ -75,7 +80,7 @@ contentsContainer.getChildren().add(vbox);
     private User user;
     @FXML
     protected void NewPost(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         PostApplication post= new PostApplication(user);
     post.start(stage);
     }
@@ -101,9 +106,36 @@ public void logout(){
 }
 @FXML
     protected void Friends(ActionEvent event) throws IOException {
-    Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     FriendApplication post= new FriendApplication(user);
     post.start(stage);
 }
+@FXML
+protected void  Notfi(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Notfications post= new Notfications(user);
+        post.start(stage);
+    }
+    @FXML
+    protected void search(ActionEvent event) throws IOException {
+        UserDatabase database = new UserDatabase();
+        List<User> users=  database.returnall();
+        int j=0;
+        for(int i=0 ; i<users.size();i++){
+            if(search.getText().equals(users.get(i).getUsername())){
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+                userSearch search = new userSearch(user,users.get(i));
+                search.start(stage);
+            }
+
+        }
+        if(j==1){
+            errors.setText("user found");
+        }
+        else {
+            errors.setText("User not found");
+        }
+
+    }
 }
