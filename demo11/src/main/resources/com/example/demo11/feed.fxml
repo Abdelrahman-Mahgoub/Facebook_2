@@ -29,7 +29,13 @@
             <Button mnemonicParsing="false" onAction="#NewStory" prefHeight="26.0" prefWidth="191.0" text="Story" />
             <Button mnemonicParsing="false" onAction="#logout" text="Logout" />
             <Button mnemonicParsing="false" onAction="#Friends" prefHeight="26.0" prefWidth="96.0" text="Friends" />
-            <Button mnemonicParsing="false" onAction="#Notfi" text="Notfications" />
+<Button 
+    mnemonicParsing="false" 
+    onAction="#Notfi" 
+    text="Notfications" 
+    prefHeight="26.0" 
+    prefWidth="133.0" />
+
          </children>
       </HBox>
    </top>

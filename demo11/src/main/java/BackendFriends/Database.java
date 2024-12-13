@@ -40,7 +40,7 @@ public void deletefriendreq(String from, String to){
 
 }}
     public void SaveRequests() {
-        JSONArray array = new JSONArray();
+       JSONArray array = new JSONArray();
         for (int i = 0; i < requests.size(); i++) {
             JSONObject object = new JSONObject();
             object.put("from", requests.get(i).getFromUserId());

@@ -160,27 +160,27 @@ protected void  Notfi(ActionEvent event) throws IOException {
         Notfications post= new Notfications(user);
         post.start(stage);
     }
-    @FXML
-    protected void search(ActionEvent event) throws IOException {
-        UserDatabase database = new UserDatabase();
-        List<User> users=  database.returnall();
-        int j=0;
-        for(int i=0 ; i<users.size();i++){
-            if(search.getText().equals(users.get(i).getUsername())){
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-                userSearch search = new userSearch(user,users.get(i));
-                search.start(stage);
-            }
+   @FXML
+protected void search(ActionEvent event) throws IOException {
+    UserDatabase database = new UserDatabase();
+    List<User> users = database.returnall();
+    boolean userFound = false; 
 
+    for (int i = 0; i < users.size(); i++) {
+        if (search.getText().equals(users.get(i).getUsername())) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            userSearch search = new userSearch(user, users.get(i));
+            search.start(stage);
+            userFound = true;
+            break; 
         }
-        if(j==1){
-            errors.setText("user found");
-        }
-        else {
-            errors.setText("User not found");
-        }
+    }
 
+    if (userFound) {
+        errors.setText("User found");
+    } else {
+        errors.setText("User not found");
     }
     @FXML
     protected void searchgrps(ActionEvent event) throws IOException {
@@ -204,4 +204,7 @@ protected void  Notfi(ActionEvent event) throws IOException {
         }
 
     }
+}
+
+
 }
