@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo11.FriendsController">
+   <children>
+      <ScrollPane>
+         <content>
+            <VBox fx:id="Suggestions" prefHeight="400.0" prefWidth="208.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="210.0" text="Suggestions" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ScrollPane layoutX="208.0" layoutY="5.0">
+         <content>
+            <VBox fx:id="contentsContainer" prefHeight="393.0" prefWidth="216.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="146.0" text="Requests" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ScrollPane layoutX="424.0" layoutY="5.0">
+         <content>
+            <VBox fx:id="Friends" prefHeight="393.0" prefWidth="176.0">
+               <children>
+                  <Label prefHeight="18.0" prefWidth="166.0" text="Friends list" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</Pane>
